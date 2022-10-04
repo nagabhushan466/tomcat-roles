@@ -1,0 +1,24 @@
+1. Set username and password for tomcat server 
+Copy the below roles under tomcat/conf/tomcat-users.xml & place at before tomcat users line
+
+<role rolename="manager"/>
+<role rolename="admin"/>
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="manager-status"/>
+<role rolename="admin-gui"/>
+<role rolename="admin-script"/>
+<user username="tomcat" password="tomcat" roles="admin,manager,manager-gui,manager-script,manager-jmx,managerstatus,admin-gui,admin-script"/>
+
+2. To access manager app in tomcat server, comment line context.xml file
+File path- opt/tomcat/webapps/host-manager/META-INF/context.xml
+
+Put <!-- before <valve class name and also put --> at end of next line.
+
+comment line context.xml file
+File path- opt/tomcat/webapps/manager/META-INF/context.xml
+
+Put <!-- before <valve class name and also put --> at end of next line.
+
+ 
